@@ -23,6 +23,8 @@ const COLORS = [
 
 let nextId = 7
 
+const defaultMap = Object.fromEntries(DEFAULT_IMAGES.map(d => [d.id, d]))
+
 export default function Gallery() {
   const [images, setImages] = useState(() => {
     try {
@@ -31,7 +33,10 @@ export default function Gallery() {
         const parsed = JSON.parse(saved)
         const maxId = parsed.reduce((m, img) => Math.max(m, img.id || 0), 0)
         nextId = maxId + 1
-        return parsed
+        return parsed.map(img => ({
+          ...img,
+          url: img.url || defaultMap[img.id]?.url || "",
+        }))
       }
     } catch {}
     return DEFAULT_IMAGES
