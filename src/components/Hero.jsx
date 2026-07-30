@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiMapPin } from "react-icons/fi"
+import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiMapPin, FiInstagram } from "react-icons/fi"
 
 export default function Hero() {
   return (
@@ -106,9 +106,10 @@ export default function Hero() {
 
             <div className="flex items-center gap-2 ml-auto">
               {[
-                { href: "https://github.com/ShreyashR2507", Icon: FiGithub, label: "GitHub" },
-                { href: "https://linkedin.com/in/shreyash-randive", Icon: FiLinkedin, label: "LinkedIn" },
-                { href: "mailto:shreyash.randive@example.com", Icon: FiMail, label: "Email" },
+                { href: "https://github.com/Shreyashr41", Icon: FiGithub, label: "GitHub" },
+                { href: "https://linkedin.com/in/shreyashr41", Icon: FiLinkedin, label: "LinkedIn" },
+                { href: "https://instagram.com/shreyash.r41", Icon: FiInstagram, label: "Instagram" },
+                { href: "mailto:shreyashrandive41@gmail.com", Icon: FiMail, label: "Email" },
               ].map(({ href, Icon, label }) => (
                 <a
                   key={label}
