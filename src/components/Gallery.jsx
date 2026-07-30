@@ -3,12 +3,12 @@ import { motion } from "framer-motion"
 import { FiLock, FiUnlock, FiEdit2, FiTrash2, FiPlus, FiX, FiSave, FiImage, FiRefreshCw, FiUpload } from "react-icons/fi"
 
 const DEFAULT_IMAGES = [
-  { id: 1, label: "Project Dashboard", color: "bg-neo-coral-light", url: "" },
-  { id: 2, label: "Team Hackathon", color: "bg-blue-50", url: "" },
-  { id: 3, label: "Code Review", color: "bg-purple-50", url: "" },
-  { id: 4, label: "Architecture Design", color: "bg-green-50", url: "" },
-  { id: 5, label: "Community Event", color: "bg-amber-50", url: "" },
-  { id: 6, label: "Tech Talk", color: "bg-pink-50", url: "" },
+  { id: 1, label: "Project Dashboard", color: "bg-neo-coral-light", url: "/gallery/photo-1.svg" },
+  { id: 2, label: "Team Hackathon", color: "bg-blue-50", url: "/gallery/photo-2.svg" },
+  { id: 3, label: "Code Review", color: "bg-purple-50", url: "/gallery/photo-3.svg" },
+  { id: 4, label: "Architecture Design", color: "bg-green-50", url: "/gallery/photo-4.svg" },
+  { id: 5, label: "Community Event", color: "bg-amber-50", url: "/gallery/photo-5.svg" },
+  { id: 6, label: "Tech Talk", color: "bg-pink-50", url: "/gallery/photo-6.svg" },
 ]
 
 const COLORS = [
