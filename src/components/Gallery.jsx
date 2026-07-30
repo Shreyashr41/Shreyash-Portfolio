@@ -2,14 +2,20 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { FiLock, FiUnlock, FiEdit2, FiTrash2, FiPlus, FiX, FiSave, FiImage, FiRefreshCw, FiUpload } from "react-icons/fi"
 
-const DEFAULT_IMAGES = [
-  { id: 1, label: "Project Dashboard", color: "bg-neo-coral-light", url: "/gallery/photo-1.svg" },
-  { id: 2, label: "Team Hackathon", color: "bg-blue-50", url: "/gallery/photo-2.svg" },
-  { id: 3, label: "Code Review", color: "bg-purple-50", url: "/gallery/photo-3.svg" },
-  { id: 4, label: "Architecture Design", color: "bg-green-50", url: "/gallery/photo-4.svg" },
-  { id: 5, label: "Community Event", color: "bg-amber-50", url: "/gallery/photo-5.svg" },
-  { id: 6, label: "Tech Talk", color: "bg-pink-50", url: "/gallery/photo-6.svg" },
-]
+const SVG_COLORS = ["#fce8e5", "#eff6ff", "#faf5ff", "#f0fdf4", "#fffbeb", "#fdf2f8"]
+const SVG_ACCENTS = ["#e85d4a", "#3b82f6", "#a855f7", "#22c55e", "#f59e0b", "#ec4899"]
+const LABELS = ["Project Dashboard", "Team Hackathon", "Code Review", "Architecture Design", "Community Event", "Tech Talk"]
+
+function inlineSvg(id, label, bg, accent) {
+  return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="${bg}"/><text x="400" y="310" font-family="Archivo Black,sans-serif" font-size="120" fill="${accent}" text-anchor="middle" opacity="0.3">${String(id).padStart(2, "0")}</text><text x="400" y="400" font-family="Space Grotesk,sans-serif" font-size="24" fill="${accent}" text-anchor="middle" font-weight="700">${label}</text></svg>`)}`
+}
+
+const DEFAULT_IMAGES = Array.from({ length: 6 }, (_, i) => ({
+  id: i + 1,
+  label: LABELS[i],
+  color: ["bg-neo-coral-light", "bg-blue-50", "bg-purple-50", "bg-green-50", "bg-amber-50", "bg-pink-50"][i],
+  url: inlineSvg(i + 1, LABELS[i], SVG_COLORS[i], SVG_ACCENTS[i]),
+}))
 
 const COLORS = [
   { value: "bg-neo-coral-light", label: "Coral" },
